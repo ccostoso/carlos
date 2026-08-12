@@ -1,0 +1,6 @@
+# Build artifacts
+function.zip
+
+# AWS files
+ecs-read-policy.json
+trust-policy.json

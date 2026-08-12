@@ -1,7 +1,10 @@
 import { Outlet, Link } from 'react-router-dom';
+import { useServiceUptime } from '../hooks/useServiceUptime';
 import './layout.css';
 
 export function Layout() {
+  const uptime = useServiceUptime('pokemoves');
+
   return (
     <>
       <div className="statusbar mono">
@@ -12,7 +15,7 @@ export function Layout() {
         <span className="sep">|</span>
         <span>REGION: us-east-1</span>
         <span className="sep">|</span>
-        <span>UPTIME: 47d 12h</span>
+        <span>UPTIME: {uptime ?? '—'}</span>
         <span className="sep">|</span>
         <span>BUILD: passing</span>
       </div>
