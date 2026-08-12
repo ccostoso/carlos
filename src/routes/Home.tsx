@@ -1,15 +1,22 @@
+import { useCallback, useState } from 'react';
+import { BootSequence } from '../components/BootSequence';
 import { ServiceCatalog } from '../components/ServiceCatalog';
 
 export function Home() {
+  const [bootDone, setBootDone] = useState(false);
+  const handleBootDone = useCallback(() => setBootDone(true), []);
+
   return (
     <>
       <div className="hero">
-        <h1>
-          Carlos Costoso<span className="accent">.</span>
+        <BootSequence onDone={handleBootDone} />
+        <h1 className={bootDone ? 'reveal' : ''}>
+          Carlos Costoso
+          <span className="cursor" />
         </h1>
-        <p className="role mono">
-          Full-stack developer → platform engineer. Ships real infrastructure,
-          not just code.
+        <p className={`role mono ${bootDone ? 'reveal' : ''}`}>
+          Full-stack developer → platform engineer. Shipping real
+          infrastructure, not just code.
         </p>
       </div>
       <ServiceCatalog />

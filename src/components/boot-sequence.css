@@ -1,0 +1,82 @@
+.hero {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 100px 32px 70px;
+}
+
+.boot {
+  font-size: 13px;
+  color: var(--text-dim);
+  min-height: 132px;
+  margin-bottom: 36px;
+}
+
+.boot .line {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 6px;
+  animation: fadeIn 0.35s forwards;
+}
+
+.boot .ok {
+  color: var(--ok);
+}
+
+.boot .step {
+  color: var(--text);
+}
+
+.boot .dim {
+  color: var(--text-dim);
+}
+
+@keyframes W {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hero h1 {
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  margin-bottom: 18px;
+  opacity: 0;
+}
+
+.hero h1.reveal {
+  animation: riseIn 0.5s forwards;
+}
+
+.hero h1 .accent {
+  color: var(--accent);
+}
+
+.hero p.role {
+  font-size: 15px;
+  color: var(--text-dim);
+  opacity: 0;
+}
+
+.hero p.role.reveal {
+  animation: riseIn 0.5s forwards;
+}
+
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cursor {
+  display: inline-block;
+  width: 7px;
+  height: 0.72em;
+  background: var(--accent);
+  margin-left: 2px;
+  vertical-align: -2px;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
