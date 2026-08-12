@@ -26,3 +26,7 @@ dist-ssr
 
 # Works in progress
 tk-*
+
+# AWS files
+cloudfront-distribution.json
+s3-bucket-policy.json

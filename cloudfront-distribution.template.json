@@ -1,0 +1,60 @@
+{
+    "CallerReference": "costo-so-carlos-2026",
+    "Aliases": {
+        "Quantity": 2,
+        "Items": [
+            "costo.so",
+            "www.costo.so"
+        ]
+    },
+    "DefaultRootObject": "index.html",
+    "Origins": {
+        "Quantity": 1,
+        "Items": [
+            {
+                "Id": "costo-so-carlos-origin",
+                "DomainName": "costo-so-carlos.s3.us-east-1.amazonaws.com",
+                "OriginAccessControlId": "<OAC_ID>",
+                "S3OriginConfig": {
+                    "OriginAccessIdentity": ""
+                }
+            }
+        ]
+    },
+    "DefaultCacheBehavior": {
+        "TargetOriginId": "costo-so-carlos-origin",
+        "ViewerProtocolPolicy": "redirect-to-https",
+        "AllowedMethods": {
+            "Quantity": 2,
+            "Items": [
+                "GET",
+                "HEAD"
+            ]
+        },
+        "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6"
+    },
+    "CustomErrorResponses": {
+        "Quantity": 2,
+        "Items": [
+            {
+                "ErrorCode": 403,
+                "ResponseCode": "200",
+                "ResponsePagePath": "/index.html",
+                "ErrorCachingMinTTL": 10
+            },
+            {
+                "ErrorCode": 404,
+                "ResponseCode": "200",
+                "ResponsePagePath": "/index.html",
+                "ErrorCachingMinTTL": 10
+            }
+        ]
+    },
+    "ViewerCertificate": {
+        "ACMCertificateArn": "<CERT_ARN>",
+        "SSLSupportMethod": "sni-only",
+        "MinimumProtocolVersion": "TLSv1.2_2021"
+    },
+    "Enabled": true,
+    "Comment": "costo.so portfolio"
+}
