@@ -15,8 +15,7 @@ export function Home() {
           <span className="cursor" />
         </h1>
         <p className={`role mono ${bootDone ? 'reveal' : ''}`}>
-          Full-stack developer → platform engineer. Shipping real
-          infrastructure, not just code.
+          Back-end engineer. I build systems and ship results.
         </p>
       </div>
       <ServiceCatalog />
