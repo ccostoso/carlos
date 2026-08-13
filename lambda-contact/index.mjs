@@ -18,7 +18,7 @@ export const handler = async (event) => {
         return respond(200, { ok: true });
     }
 
-    if (!isNonEmptyString(name, 100) || !isValidEmail(email) || !isNonEmptyString(message, 5000)) {
+    if (!isSingleLine(name, 100) || !isValidEmail(email) || !isNonEmptyString(message, 5000)) {
         return respond(400, { error: "invalid input" });
     }
 
@@ -46,6 +46,10 @@ export const handler = async (event) => {
 
 function isNonEmptyString(val, maxLen) {
     return typeof val === "string" && val.trim().length > 0 && val.length <= maxLen;
+}
+
+function isSingleLine(val, maxLen) {
+    return isNonEmptyString(val, maxLen) && !/[\r\n]/.test(val);
 }
 
 function isValidEmail(val) {
