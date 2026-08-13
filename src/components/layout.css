@@ -47,3 +47,50 @@ footer a {
 footer a:hover {
   color: var(--accent);
 }
+
+.sitenav {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 16px 32px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.sitenav-mark {
+  color: var(--text-dim);
+  text-decoration: none;
+}
+
+.sitenav-mark:hover {
+  color: var(--text);
+}
+
+.sitenav-mark .accent {
+  color: var(--accent);
+}
+
+.sitenav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.sitenav-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+}
+
+.sitenav-links a:hover {
+  color: var(--text);
+}
+
+.sitenav-links a.active {
+  color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .statusbar .collapse {
+    display: none;
+  }
+}

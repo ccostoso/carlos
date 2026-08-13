@@ -1,5 +1,6 @@
-import { Outlet, Link } from 'react-router-dom';
+import { NavLink, Outlet, Link } from 'react-router-dom';
 import { useServiceUptime } from '../hooks/useServiceUptime';
+import { navLinks } from '../data/navLinks';
 import './layout.css';
 
 export function Layout() {
@@ -12,13 +13,31 @@ export function Layout() {
           <span className="dot" />
           ALL SYSTEMS OPERATIONAL
         </span>
-        <span className="sep">|</span>
-        <span>REGION: us-east-1</span>
+        <span className="sep collapse">|</span>
+        <span className="collapse">REGION: us-east-1</span>
         <span className="sep">|</span>
         <span>UPTIME: {uptime ?? '—'}</span>
-        <span className="sep">|</span>
-        <span>BUILD: passing</span>
+        <span className="sep collapse">|</span>
+        <span className="collapse">BUILD: passing</span>
       </div>
+
+      <nav className="sitenav mono">
+        <Link to="/" className="sitenav-mark">
+          ~/costo.so
+        </Link>
+        <div className="sitenav-links">
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+              end={link.to === '/'}
+            >
+              {({ isActive }) => (isActive ? `[${link.label}]` : link.label)}
+            </NavLink>
+          ))}
+        </div>
+      </nav>
 
       <Outlet />
 
