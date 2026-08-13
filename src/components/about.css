@@ -1,0 +1,42 @@
+.about {
+  max-width: 880px;
+  margin: 0 auto 70px;
+  padding: 0 32px;
+}
+
+.about-panel {
+  border: 1px solid var(--hairline);
+  background: var(--panel);
+  border-radius: 6px;
+  padding: 24px 28px;
+}
+
+.about-panel p {
+  color: var(--text-dim);
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.now-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.now-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.now-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  transform: translateY(-1px);
+}

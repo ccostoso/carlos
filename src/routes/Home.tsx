@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import { BootSequence } from '../components/BootSequence';
 import { ServiceCatalog } from '../components/ServiceCatalog';
+import { About } from '../components/About';
 
 export function Home() {
   const [bootDone, setBootDone] = useState(false);
@@ -18,6 +19,7 @@ export function Home() {
           Back-end engineer. I build it, deploy it and keep it running.
         </p>
       </div>
+      <About />
       <ServiceCatalog />
     </>
   );
