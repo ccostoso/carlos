@@ -10,11 +10,11 @@ export function Home() {
     <>
       <div className="hero">
         <BootSequence onDone={handleBootDone} />
-        <h1 className={bootDone ? 'reveal' : ''}>
+        <h1 className={`mono ${bootDone ? 'reveal' : ''}`}>
           Carlos Costoso
           <span className="cursor" />
         </h1>
-        <p className={`role mono ${bootDone ? 'reveal' : ''}`}>
+        <p className={`role ${bootDone ? 'reveal' : ''}`}>
           Back-end engineer. I build systems and ship results.
         </p>
       </div>

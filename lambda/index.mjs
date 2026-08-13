@@ -2,7 +2,7 @@ import { ECSClient, ListTasksCommand, DescribeTasksCommand } from "@aws-sdk/clie
 
 const ecs = new ECSClient({ region: "us-east-1" });
 
-// Add new services here as you deploy them
+// Map of service keys to ECS cluster/service names
 const SERVICES = {
     pokemoves: { cluster: "pokemoves-cluster", service: "pokemoves-service" },
 };

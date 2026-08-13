@@ -30,7 +30,7 @@
   color: var(--text-dim);
 }
 
-@keyframes W {
+@keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
@@ -69,10 +69,10 @@
 
 .cursor {
   display: inline-block;
-  width: 7px;
-  height: 0.72em;
+  width: .4em;
+  height: 0.75em;
   background: var(--accent);
-  margin-left: 2px;
+  margin-left: 6px;
   vertical-align: -2px;
   animation: blink 1s steps(1) infinite;
 }
