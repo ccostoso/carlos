@@ -1,6 +1,7 @@
 import { NavLink, Outlet, Link } from 'react-router-dom';
 import { useServiceUptime } from '../hooks/useServiceUptime';
 import { navLinks } from '../data/navLinks';
+import { SocialLinks } from './SocialLinks';
 import './layout.css';
 
 export function Layout() {
@@ -25,29 +26,31 @@ export function Layout() {
         <Link to="/" className="sitenav-mark">
           ~/costo.so
         </Link>
-        <div className="sitenav-links">
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              className={({ isActive }) => (isActive ? 'active' : '')}
-              end={link.to === '/'}
-            >
-              {({ isActive }) => (isActive ? `[${link.label}]` : link.label)}
-            </NavLink>
-          ))}
+        <div className="sitenav-right">
+          <div className="sitenav-links">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                className={({ isActive }) => (isActive ? 'active' : '')}
+                end={link.to === '/'}
+              >
+                {({ isActive }) => (isActive ? `[${link.label}]` : link.label)}
+              </NavLink>
+            ))}
+            <a href="/resume.pdf" target="_blank" rel="noreferrer">
+              resume ↗
+            </a>
+          </div>
+          <SocialLinks />
         </div>
       </nav>
 
       <Outlet />
 
       <footer className="mono">
-        <span>&copy; 2026 costo.so</span>
-        <span>
-          <a href="https://github.com/ccostoso">github.com/ccostoso</a>
-          &nbsp;&middot;&nbsp;
-          <Link to="/contact">email</Link>
-        </span>
+        <span>&copy; {new Date().getFullYear()} costo.so</span>
+        <SocialLinks />
       </footer>
     </>
   );

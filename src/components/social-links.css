@@ -1,0 +1,25 @@
+.social-links {
+  display: flex;
+  gap: 16px;
+}
+
+.social-links a {
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+}
+
+.social-links a:hover {
+  color: var(--accent);
+}
+
+.sitenav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.sitenav-right .social-links {
+  padding-left: 20px;
+  border-left: 1px solid var(--hairline);
+}

@@ -1,4 +1,4 @@
-export type ProjectStatus = "active" | "inactive";
+type ProjectStatus = "active" | "inactive";
 
 export interface Project {
     name: string;
