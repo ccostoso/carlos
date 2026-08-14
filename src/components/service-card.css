@@ -50,6 +50,27 @@
   box-shadow: 0 0 6px var(--ok);
 }
 
+.status .dot:not(.dot-inactive) {
+  animation: dot-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes dot-pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 6px var(--ok);
+  }
+  50% {
+    opacity: 0.65;
+    box-shadow: 0 0 2px var(--ok);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status .dot {
+    animation: none;
+  }
+}
+
 .status .dot-inactive {
   background: var(--text-dim);
   box-shadow: none;

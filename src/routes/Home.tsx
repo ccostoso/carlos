@@ -16,7 +16,7 @@ export function Home() {
           <span className="cursor" />
         </h1>
         <p className={`role ${bootDone ? 'reveal' : ''}`}>
-          Back-end engineer. I build it, I deploy it and then I keep it running!
+          Back-end engineer. I build it, deploy it and keep it running!
         </p>
       </div>
       <About />
