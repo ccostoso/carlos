@@ -94,3 +94,36 @@
   text-decoration: none;
   white-space: nowrap;
 }
+
+@media (max-width: 640px) {
+  .service {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .service .status {
+    order: 1;
+  }
+
+  .service .name {
+    order: 2;
+  }
+
+  .service .link {
+    order: 3;
+    flex-basis: 100%;
+    align-self: flex-start;
+    white-space: normal;
+  }
+
+  .service .desc {
+    order: 4;
+    flex-basis: 100%;
+  }
+
+  .service .meta {
+    order: 5;
+    flex-basis: 100%;
+  }
+}
