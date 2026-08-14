@@ -54,6 +54,10 @@
   cursor: pointer;
 }
 
+.contact-form button:hover {
+  background: var(--accent-hover);
+}
+
 .contact-form button:disabled {
   opacity: 0.6;
   cursor: default;
