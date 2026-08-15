@@ -50,7 +50,7 @@ export function Layout() {
               </NavLink>
             ))}
             <a href="/resume.pdf" target="_blank" rel="noreferrer">
-              resume ↗
+              resume.pdf ↗
             </a>
           </div>
           <SocialLinks />
