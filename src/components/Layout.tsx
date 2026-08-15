@@ -16,8 +16,8 @@ export function Layout() {
         </span>
         <span className="sep collapse">|</span>
         <span className="collapse">REGION: us-east-1</span>
-        <span className="sep">|</span>
-        <span>UPTIME: {uptime ?? '—'}</span>
+        <span className="sep hide-uptime">|</span>
+        <span className="hide-uptime">UPTIME: {uptime ?? '—'}</span>
         <span className="sep collapse">|</span>
         <span className="collapse">BUILD: passing</span>
       </div>

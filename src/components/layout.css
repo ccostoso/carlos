@@ -110,6 +110,12 @@ footer a:hover {
   color: var(--accent);
 }
 
+@media (max-width: 768px) {
+  .statusbar .hide-uptime {
+    display: none;
+  }
+}
+
 @media (max-width: 640px) {
   .statusbar .collapse {
     display: none;
