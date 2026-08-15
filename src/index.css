@@ -51,9 +51,23 @@ body {
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  background: conic-gradient(from var(--glow-angle), #2DD4BF, #78BFFA, #38BDF8, #2DD4BF);
-  animation: glow-spin 6s linear infinite;
+  background: conic-gradient(from var(--glow-angle), var(--accent), var(--accent-dim), var(--accent));
+  opacity: 0;
+  transition: opacity 0.25s ease;
   z-index: -1;
+}
+
+.glow-border:hover::before,
+.glow-border:hover::after {
+  animation: glow-spin 6s linear infinite;
+}
+
+.glow-border:hover::before {
+  opacity: 1;
+}
+
+.glow-border:hover::after {
+  opacity: 0.35;
 }
 
 .glow-border::before {
@@ -68,7 +82,6 @@ body {
 .glow-border::after {
   inset: -1px;
   filter: blur(2px);
-  opacity: 0.35;
 }
 
 @keyframes glow-spin {
@@ -78,8 +91,8 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .glow-border::before,
-  .glow-border::after {
+  .glow-border:hover::before,
+  .glow-border:hover::after {
     animation: none;
   }
 }
