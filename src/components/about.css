@@ -18,6 +18,20 @@
   margin-bottom: 20px;
 }
 
+.about-panel p:last-child {
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.about-panel p a {
+  color: var(--text-dim);
+  text-decoration: none;
+}
+
+.about-panel p a:hover {
+  color: var(--text);
+}
+
 .now-list {
   display: flex;
   flex-direction: column;
