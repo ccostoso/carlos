@@ -8,6 +8,12 @@
   padding: 0 32px 90px;
 }
 
+.contact-panel {
+  background: var(--panel);
+  border-radius: 6px;
+  padding: 24px 28px;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;

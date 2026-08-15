@@ -5,7 +5,6 @@
 }
 
 .about-panel {
-  border: 1px solid var(--hairline);
   background: var(--panel);
   border-radius: 6px;
   padding: 24px 28px;

@@ -28,3 +28,58 @@ body {
 .mono {
   font-family: "IBM Plex Mono", monospace;
 }
+
+@property --glow-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/*
+ * Rotating conic-gradient ring + soft blurred halo, painted behind a solid
+ * card. The card must be a normal-flow child so it stacks above the ring.
+ */
+.glow-border {
+  position: relative;
+  isolation: isolate;
+  border-radius: 6px;
+}
+
+.glow-border::before,
+.glow-border::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--glow-angle), #2DD4BF, #78BFFA, #38BDF8, #2DD4BF);
+  animation: glow-spin 6s linear infinite;
+  z-index: -1;
+}
+
+.glow-border::before {
+  padding: 1px;
+  /* -webkit- fallback for Safari versions that don't support the standard properties below. */
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.glow-border::after {
+  inset: -1px;
+  filter: blur(2px);
+  opacity: 0.35;
+}
+
+@keyframes glow-spin {
+  to {
+    --glow-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow-border::before,
+  .glow-border::after {
+    animation: none;
+  }
+}

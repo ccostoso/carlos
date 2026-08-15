@@ -41,66 +41,76 @@ export function Contact() {
     <div className="contact-page">
       <div className="section-label mono">// send_message</div>
       <div className="contact">
-        {status === 'sent' ? (
-          <p className="contact-confirmation mono">
-            Message sent — I'll get back to you soon.
-          </p>
-        ) : (
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <label className="mono" htmlFor="name">
-              name
-            </label>
-            <input id="name" name="name" type="text" required maxLength={100} />
-
-            <label className="mono" htmlFor="email">
-              email
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              maxLength={200}
-            />
-
-            <label className="mono" htmlFor="message">
-              message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              maxLength={5000}
-              rows={6}
-            />
-
-            {/* honeypot: hidden from real users via CSS, bots fill it anyway */}
-            <div className="hp-field" aria-hidden="true">
-              <label htmlFor="company">company</label>
-              <input
-                id="company"
-                name="company"
-                type="text"
-                tabIndex={-1}
-                autoComplete="off"
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="mono"
-              disabled={status === 'sending'}
-            >
-              {status === 'sending' ? 'sending…' : 'send'}
-            </button>
-
-            {status === 'error' && (
-              <p className="contact-error mono">
-                Something went wrong — try again, or reach out on GitHub.
+        <div className="glow-border">
+          <div className="contact-panel">
+            {status === 'sent' ? (
+              <p className="contact-confirmation mono">
+                Message sent — I'll get back to you soon.
               </p>
+            ) : (
+              <form className="contact-form" onSubmit={handleSubmit}>
+                <label className="mono" htmlFor="name">
+                  name
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  maxLength={100}
+                />
+
+                <label className="mono" htmlFor="email">
+                  email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  maxLength={200}
+                />
+
+                <label className="mono" htmlFor="message">
+                  message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  maxLength={5000}
+                  rows={6}
+                />
+
+                {/* honeypot: hidden from real users via CSS, bots fill it anyway */}
+                <div className="hp-field" aria-hidden="true">
+                  <label htmlFor="company">company</label>
+                  <input
+                    id="company"
+                    name="company"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="mono"
+                  disabled={status === 'sending'}
+                >
+                  {status === 'sending' ? 'sending…' : 'send'}
+                </button>
+
+                {status === 'error' && (
+                  <p className="contact-error mono">
+                    Something went wrong — try again, or reach out on GitHub.
+                  </p>
+                )}
+              </form>
             )}
-          </form>
-        )}
+          </div>
+        </div>
       </div>
     </div>
   );
