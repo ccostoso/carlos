@@ -1,25 +1,36 @@
 import { NavLink, Outlet, Link } from 'react-router-dom';
 import { useServiceUptime } from '../hooks/useServiceUptime';
+import { useCollapseOnWrap } from '../hooks/useCollapseOnWrap';
 import { navLinks } from '../data/navLinks';
 import { SocialLinks } from './SocialLinks';
 import './layout.css';
 
 export function Layout() {
   const uptime = useServiceUptime('pokemoves');
+  // Drop order when space runs out: BUILD, then REGION, then UPTIME.
+  const { containerRef, setItemRef } = useCollapseOnWrap<HTMLSpanElement>([
+    3, 1, 2,
+  ]);
 
   return (
     <>
-      <div className="statusbar mono">
-        <span>
+      <div className="statusbar mono" ref={containerRef}>
+        <span ref={setItemRef(0)}>
           <span className="dot" />
           ALL SYSTEMS OPERATIONAL
         </span>
-        <span className="sep collapse">|</span>
-        <span className="collapse">REGION: us-east-1</span>
-        <span className="sep hide-uptime">|</span>
-        <span className="hide-uptime">UPTIME: {uptime ?? '—'}</span>
-        <span className="sep collapse">|</span>
-        <span className="collapse">BUILD: passing</span>
+        <span className="statusbar-item" ref={setItemRef(1)}>
+          <span className="sep">|</span>
+          REGION: us-east-1
+        </span>
+        <span className="statusbar-item" ref={setItemRef(2)}>
+          <span className="sep">|</span>
+          UPTIME: {uptime ?? '—'}
+        </span>
+        <span className="statusbar-item" ref={setItemRef(3)}>
+          <span className="sep">|</span>
+          BUILD: passing
+        </span>
       </div>
 
       <nav className="sitenav mono">
