@@ -53,7 +53,7 @@ body {
   border-radius: inherit;
   background: conic-gradient(from var(--glow-angle), var(--accent), var(--accent-dim), var(--accent));
   opacity: 0;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.5s ease-in;
   z-index: -1;
 }
 

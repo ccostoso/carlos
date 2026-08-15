@@ -30,10 +30,10 @@
   transition: background 0.15s, border-color 0.15s;
 }
 
-.service:hover {
+/* .service:hover {
   background: var(--panel-hover);
   border-color: #3a4152;
-}
+} */
 
 .service .status {
   order: 1;

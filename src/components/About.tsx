@@ -17,10 +17,10 @@ export function About() {
             <p>
               Hello, world! My name's Carlos, and my calling is the backend.
               Below, you'll find a collection of projects I built and monitor
-              myself, from schema design to CI/CD. Earlier in my career I worked
-              the operational side of backend systems: extending FIX
+              myself, from schema design to CI/CD. Earlier, in my career I
+              worked the operational side of backend systems: extending FIX
               connectivity, maintaining SQL databases and catching issues before
-              they happen with QA testing. Nowadays, I'm doing the building
+              they happen with QA tests. Nowadays, I'm doing the building
               myself.
             </p>
             <ul className="now-list mono">
