@@ -110,6 +110,42 @@ footer a:hover {
   color: var(--accent);
 }
 
+@media (max-width: 640px) {
+  .sitenav {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "mark social"
+      "links links";
+    row-gap: 12px;
+    padding-bottom: 16px;
+  }
+
+  .sitenav-mark {
+    grid-area: mark;
+  }
+
+  /* Unwraps sitenav-right so its children can be placed directly on the grid. */
+  .sitenav-right {
+    display: contents;
+  }
+
+  .sitenav-links {
+    grid-area: links;
+    flex-wrap: wrap;
+  }
+
+  .social-links {
+    grid-area: social;
+    justify-self: end;
+  }
+
+  .sitenav-right .social-links {
+    padding-left: 0;
+    border-left: none;
+  }
+}
+
 .statusbar-item {
   display: inline-flex;
   align-items: center;

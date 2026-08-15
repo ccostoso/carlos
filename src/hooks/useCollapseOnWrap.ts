@@ -35,7 +35,9 @@ export function useCollapseOnWrap<T extends HTMLElement = HTMLElement>(hidePrior
         const container = containerRef.current;
         if (!container) return undefined;
 
-        const observer = new ResizeObserver(recalc);
+        // Deferred via rAF: recalc resizes the observed container itself, which would
+        // otherwise retrigger the observer synchronously and log a benign loop warning.
+        const observer = new ResizeObserver(() => requestAnimationFrame(recalc));
         observer.observe(container);
         return () => observer.disconnect();
     }, []);
