@@ -16,10 +16,10 @@ export function About() {
           <div className="about-panel">
             <p>
               My name's Carlos, and my calling is the backend. Earlier in my
-              career, I worked the operational side of backend systems:
-              extending FIX connectivity, maintaining SQL databases and catching
-              issues before they happen with QA tests. Nowadays, I'm doing the
-              building myself.
+              career, I worked the operational side of things, extending FIX
+              connectivity, maintaining SQL databases and catching issues before
+              they happen with QA tests. Nowadays, I'm doing the building
+              myself.
             </p>
             <p>Here's what I've been up to lately:</p>
             <ul className="now-list mono">
