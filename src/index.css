@@ -29,6 +29,10 @@ body {
   font-family: "IBM Plex Mono", monospace;
 }
 
+.italic {
+    font-style: italic;
+}
+
 @property --glow-angle {
   syntax: '<angle>';
   inherits: false;
