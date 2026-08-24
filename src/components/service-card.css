@@ -120,3 +120,8 @@
   padding: 3px 8px;
   letter-spacing: 0.02em;
 }
+
+.desc-link {
+  color: var(--accent);
+  text-decoration: none;
+}

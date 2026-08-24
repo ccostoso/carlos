@@ -31,7 +31,7 @@ export const projects: Project[] = [
     },
     {
         name: "next-ecommerce",
-        description: "Full-stack ecommerce demo — product catalog, cart, checkout flow.",
+        description: "A full-stack ecommerce demo using Next, Postgres and Vercel. Based off of the incredible Udemy Next.js course written by Piotr Jura, which you can find [here](https://www.udemy.com/course/master-nextjs-15-the-missing-guide/).",
         status: "active",
         badges: ["Next.js", "Postgres", "Vercel"],
         link: "https://ccostoso-next-ecommerce-2026.vercel.app/",
