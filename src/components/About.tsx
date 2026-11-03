@@ -15,11 +15,12 @@ export function About() {
         <div className="glow-border">
           <div className="about-panel">
             <p>
-              My name's Carlos, and my calling is the backend. Earlier in my
-              career, I worked the operational side of things, extending FIX
-              connectivity, maintaining SQL databases and catching issues before
-              they happen with QA tests. It's great work, but now I'd like to
-              start <span className="italic">building</span> those systems, too.
+              My name's Carlos, and I love building things end-to-end, from
+              database to interface. Earlier in my career, I worked the
+              operational side of things, extending FIX connectivity,
+              maintaining SQL databases and catching issues before they happen
+              with QA tests. It's great work, but now I'd like to start{' '}
+              <span className="italic">building</span> those systems, too.
             </p>
             <p>Here's what I've been up to lately:</p>
             <ul className="now-list mono">
